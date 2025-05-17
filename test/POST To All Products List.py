@@ -14,7 +14,7 @@ def test_get_product_list():
     # Дополнительно можно проверить структуру ответа, если нужно
     data = response.json()
     assert isinstance(data, list), "Ответ должен быть списком продуктов."
-    pytest.fail(" Ответ имеет ожидаемую структуру (список продуктов).")
+    print("✅ Ответ имеет ожидаемую структуру (список продуктов).")
 
 def test_post_product_list():
     print(f'\nПроверяем адрес: {API_URL}')
@@ -28,4 +28,4 @@ def test_post_product_list():
     expected_message = "This request method is not supported."
 
     assert expected_message in response_message, f"Ожидаемое сообщение не найдено в ответе: {response_message}"
-    print(" Сообщение об ошибке совпадает с ожидаемым.")
+    print("✅ Сообщение об ошибке совпадает с ожидаемым.")
