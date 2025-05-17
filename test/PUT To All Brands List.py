@@ -31,6 +31,6 @@ def test_put_products_list():
     expected_message = "This request method is not supported."
 
     assert expected_message in response_text, f" Ожидаемое сообщение не найдено в ответе: {response_text}"
-    print("✅ Сообщение об ошибке 'This request method is not supported.' найдено в ответе.")
+    print(" Сообщение об ошибке 'This request method is not supported.' найдено в ответе.")
 
 
