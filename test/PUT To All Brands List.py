@@ -24,7 +24,7 @@ def test_put_products_list():
 
     response = requests.put(BASE_URL)
 
-    assert response.status_code == 405, f'Ожидали 405, получили: {response.status_code}'
+    assert response.status_code == 200, f'Ожидали 200, получили: {response.status_code}'
     print(" Код ответа 405 получен, метод PUT не поддерживается, как и ожидалось.")
 
     response_text = response.text.strip()
@@ -32,5 +32,10 @@ def test_put_products_list():
 
     assert expected_message in response_text, f" Ожидаемое сообщение не найдено в ответе: {response_text}"
     print(" Сообщение об ошибке 'This request method is not supported.' найдено в ответе.")
+
+    response_to_json = response.json()
+    assert response_to_json['responseCode'] == 405,\
+    print(response_to_json['responseCode'])
+    print(f'Тест успешно пройден: Получен код {response.status_code} и сообщение: "{response.text.strip()}"')
 
 
