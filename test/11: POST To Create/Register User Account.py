@@ -22,10 +22,10 @@ def test_post_create_user_acc():
    company = fake.company()
    address1 = fake.address()
    address2 = fake.secondary_address()
-   country = 'Russia'  # Можно оставить фиксированным или тоже генерировать
+   country = 'Russia'  
    zipcode = fake.postcode()
    state = fake.state()
-   city = fake.city()  # <-- ДОБАВЛЕНО! Это была основная причина ошибки 400
+   city = fake.city()  
    mobile_number = fake.phone_number()
 
    payload = {
@@ -44,7 +44,7 @@ def test_post_create_user_acc():
       'country': country,
       'zipcode': zipcode,
       'state': state,
-      'city': city,  # <-- ОБЯЗАТЕЛЬНО!
+      'city': city,
       'mobile_number': mobile_number
       }
 
